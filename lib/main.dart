@@ -11,8 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (!kIsWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
-    setWindowMinSize(Size(400, 600));
-    setWindowMaxSize(Size(400, 600));
+    setWindowMinSize(Size(600, 600));
+    setWindowMaxSize(Size(600, 600));
     setWindowTitle('Save My Password');
   }
 
