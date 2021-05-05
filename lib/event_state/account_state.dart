@@ -38,11 +38,15 @@ class AccountGetsDataSuccess extends AccountState {
 }
 
 class AccountError extends AccountState {
+  final String message;
+
+  AccountError({required this.message});
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [message];
 
   @override
   String toString() {
-    return 'Ups... something wrong';
+    return message;
   }
 }

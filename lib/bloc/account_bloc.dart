@@ -111,7 +111,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     } catch (e) {
       print(e);
 
-      yield AccountError();
+      yield AccountError(message: e.toString());
     }
   }
 }
