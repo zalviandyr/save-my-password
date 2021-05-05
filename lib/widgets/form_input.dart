@@ -70,9 +70,9 @@ class _FormInputState extends State<FormInput> {
                       _usernameController.text.isNotEmpty &&
                       _passwordController.text.isNotEmpty) {
                     widget.onPressed(
-                      _accountController.text,
-                      _usernameController.text,
-                      _passwordController.text,
+                      _accountController.text.trim(),
+                      _usernameController.text.trim(),
+                      _passwordController.text.trim(),
                     );
 
                     _accountController.text = '';
