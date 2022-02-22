@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:save_my_password/models/account_model.dart';
+import 'package:save_my_password/models/account.dart';
 
 abstract class AccountEvent extends Equatable {
   AccountEvent();
@@ -16,7 +16,7 @@ class AccountGetsData extends AccountEvent {
 }
 
 class AccountSaveData extends AccountEvent {
-  final AccountModel account;
+  final Account account;
 
   AccountSaveData({required this.account});
 
@@ -25,7 +25,7 @@ class AccountSaveData extends AccountEvent {
 }
 
 class AccountUpdateData extends AccountEvent {
-  final AccountModel account;
+  final Account account;
 
   AccountUpdateData({required this.account});
 
@@ -34,7 +34,7 @@ class AccountUpdateData extends AccountEvent {
 }
 
 class AccountDeleteData extends AccountEvent {
-  final AccountModel account;
+  final Account account;
 
   AccountDeleteData({required this.account});
 
