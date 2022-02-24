@@ -9,12 +9,20 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
+  final List<Widget> _panes = [
+    MyAccountPane(),
+    BackupPane(),
+    BackupPane(),
+  ];
+  int _selected = 0;
+
   @override
   Widget build(BuildContext context) {
     return NavigationView(
       pane: NavigationPane(
-        selected: 0,
+        selected: _selected,
         displayMode: PaneDisplayMode.compact,
+        onChanged: (index) => setState(() => _selected = index),
         items: [
           PaneItem(
             icon: Icon(FluentIcons.accounts),
@@ -31,18 +39,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
         ],
       ),
       content: NavigationBody(
-        index: 0,
-        children: [
-          MyAccountPane(),
-          ScaffoldPage(
-            header: Text('Manage your account'),
-            content: Text('Account'),
-          ),
-          ScaffoldPage(
-            header: Text('Manage your account'),
-            content: Text('Account'),
-          ),
-        ],
+        index: _selected,
+        children: _panes,
       ),
     );
   }
