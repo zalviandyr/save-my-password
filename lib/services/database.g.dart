@@ -152,8 +152,19 @@ class _$AccountDao extends AccountDao {
   }
 
   @override
+  Future<void> deleteAllAccount() async {
+    await _queryAdapter.queryNoReturn('DELETE FROM Account');
+  }
+
+  @override
   Future<void> insertAccount(Account account) async {
     await _accountInsertionAdapter.insert(account, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> insertAccounts(List<Account> accounts) async {
+    await _accountInsertionAdapter.insertList(
+        accounts, OnConflictStrategy.abort);
   }
 
   @override

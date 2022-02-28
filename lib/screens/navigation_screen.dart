@@ -12,7 +12,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   final List<Widget> _panes = [
     MyAccountPane(),
     BackupPane(),
-    BackupPane(),
+    RestorePane(),
   ];
   int _selected = 0;
 

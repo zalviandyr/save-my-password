@@ -109,17 +109,6 @@ class _BackupPaneState extends State<BackupPane> {
           ),
         ],
       ),
-      // children: [
-      //   Text('Export file to .csv format'),
-      //   const SizedBox(height: 10.0),
-      //   SizedBox(
-      //     width: 50.0,
-      //     child: Button(
-      //       child: Text('Save to'),
-      //       onPressed: _onBackupAction,
-      //     ),
-      //   ),
-      // ],
     );
   }
 }

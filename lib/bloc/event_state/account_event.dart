@@ -51,9 +51,10 @@ class AccountBackupData extends AccountEvent {
 }
 
 class AccountRestoreData extends AccountEvent {
-  final String filePath;
+  final List<Account> accounts;
+  final bool isFullRestore;
 
-  AccountRestoreData({required this.filePath});
+  AccountRestoreData({required this.accounts, required this.isFullRestore});
   @override
-  List<Object?> get props => [filePath];
+  List<Object?> get props => [accounts, isFullRestore];
 }
