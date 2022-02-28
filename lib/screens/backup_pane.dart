@@ -5,6 +5,7 @@ import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:save_my_password/bloc/bloc.dart';
 import 'package:save_my_password/models/account.dart';
 
@@ -32,9 +33,14 @@ class _BackupPaneState extends State<BackupPane> {
   }
 
   Future<void> _onBackupAction() async {
+    DateFormat format = DateFormat('dd-MM-yyyy');
+    String date = format.format(DateTime.now());
+
     String? outputFile = await FilePicker.platform.saveFile(
       dialogTitle: 'Save file to',
-      fileName: 'my-account-backup.csv',
+      type: FileType.custom,
+      allowedExtensions: ['csv'],
+      fileName: 'my-account-backup ($date).csv',
     );
 
     if (outputFile != null) {
